@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "microservices-example-go/review/internal/grpc/service";
+
+import "microservices-example-go/review/internal/proto-files/domain/review.proto";
+
+service ReviewService {
+   rpc get (domain.review) returns (GetReviewResponse);
+}
+
+message GetReviewResponse {
+   domain.review review = 1;
+}
+

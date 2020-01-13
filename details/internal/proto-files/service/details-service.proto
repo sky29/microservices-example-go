@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "microservices-example-go/details/internal/grpc/service";
+
+import "microservices-example-go/details/internal/proto-files/domain/details.proto";
+
+service DetailsService {
+   rpc get (domain.details) returns (GetDetailsResponse);
+}
+
+message GetDetailsResponse {
+   domain.details details = 1;
+}
+

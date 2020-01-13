@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "microservices-example-go/product/internal/grpc/service";
+
+import "microservices-example-go/product/internal/proto-files/domain/product.proto";
+
+service ProductService {
+   rpc get (domain.product) returns (GetProductResponse);
+}
+
+message GetProductResponse {
+   domain.product product = 1;
+}
+

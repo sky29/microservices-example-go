@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package domain;
+
+option go_package = "microservices-example-go/review/internal/grpc/domain";
+
+message review {
+   int64 id = 1;
+   string review = 2;
+   string rating = 3;
+}
+
